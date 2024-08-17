@@ -1,7 +1,16 @@
 .todo-list {
   max-width: 500px;
-  margin: 0 auto;
-  padding: 20px;
+  margin: 20px auto;
+  padding: 30px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #343a40;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .add-todo {
@@ -11,7 +20,24 @@
 
 .add-todo input {
   flex-grow: 1;
-  padding: 5px;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px 0 0 4px;
+  font-size: 16px;
+}
+
+.add-todo button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-todo button:hover {
+  background-color: #0056b3;
 }
 
 ul {
@@ -23,18 +49,45 @@ li {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+li input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+li span {
+  flex-grow: 1;
+  font-size: 16px;
 }
 
 .completed {
   text-decoration: line-through;
-  color: #888;
+  color: #6c757d;
 }
 
-button {
-  margin-left: 10px;
+li button {
+  padding: 5px 10px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+li button:hover {
+  background-color: #c82333;
 }
 
 .error-message {
-  color: red;
-  margin-bottom: 10px;
+  color: #dc3545;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
 }

@@ -1,0 +1,17 @@
+<div class="todo-list">
+  <h1>Todo List</h1>
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+  <div class="add-todo">
+    <input [(ngModel)]="newTodoTitle" (keyup.enter)="addTodo()" placeholder="Add a new todo">
+    <button (click)="addTodo()">Add</button>
+  </div>
+  <ul>
+    <li *ngFor="let todo of todos">
+      <input type="checkbox" [checked]="todo.completed" (change)="toggleTodo(todo)">
+      <span [class.completed]="todo.completed">{{ todo.title }}</span>
+      <button (click)="deleteTodo(todo.id)">Delete</button>
+    </li>
+  </ul>
+</div>

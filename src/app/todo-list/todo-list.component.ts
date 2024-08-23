@@ -25,7 +25,7 @@ export class TodoListComponent implements OnInit {
   async loadTodos(): Promise<void> {
     try {
       this.todos = await this.todoService.getTodos();
-      this.errorMessage = ''; // Clear any previous error message
+      this.errorMessage = '';
     } catch (error) {
       console.error('Error loading todos:', error);
       this.errorMessage = 'Unable to load todos. Please try again later.';
@@ -41,8 +41,8 @@ export class TodoListComponent implements OnInit {
         };
         await this.todoService.addTodo(newTodo);
         this.newTodoTitle = '';
-        await this.loadTodos(); // Reload todos after adding
-        this.errorMessage = ''; // Clear any previous error message
+        await this.loadTodos();
+        this.errorMessage = '';
       } catch (error) {
         console.error('Error adding todo:', error);
         this.errorMessage = 'Unable to add todo. Please try again.';
@@ -54,7 +54,7 @@ export class TodoListComponent implements OnInit {
     try {
       todo.completed = !todo.completed;
       await this.todoService.updateTodo(todo);
-      this.errorMessage = ''; // Clear any previous error message
+      this.errorMessage = '';
     } catch (error) {
       console.error('Error updating todo:', error);
       this.errorMessage = 'Unable to update todo. Please try again.';
@@ -65,8 +65,8 @@ export class TodoListComponent implements OnInit {
     if (id !== undefined) {
       try {
         await this.todoService.deleteTodo(id);
-        await this.loadTodos(); // Reload todos after deleting
-        this.errorMessage = ''; // Clear any previous error message
+        await this.loadTodos();
+        this.errorMessage = '';
       } catch (error) {
         console.error('Error deleting todo:', error);
         this.errorMessage = 'Unable to delete todo. Please try again.';
